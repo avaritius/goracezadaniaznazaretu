@@ -6,12 +6,21 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            string[] names = { "Anna", "Bartek", "Celina", "Dawid", "Ewa" };
+            int[] numbers = { 3, 4, 7, 10, 25, 18, 0 };
 
-            for (int i = names.Length - 1; i >= 0; i--)
+            int evenCount = 0;
+            int oddCount = 0;
+
+            foreach (var n in numbers)
             {
-                Console.WriteLine(names[i]);
+                if (n % 2 == 0)
+                    evenCount++;
+                else
+                    oddCount++;
             }
+
+            Console.WriteLine($"liczba parzystych: {evenCount}");
+            Console.WriteLine($"liczba nieparzystych: {oddCount}");
         }
     }
 }
