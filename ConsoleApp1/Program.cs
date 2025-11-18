@@ -6,21 +6,16 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int[] numbers = { 3, 4, 7, 10, 25, 18, 0 };
+            int[] A = { 1, 2, 3, 4, 5 };
+            int[] B = new int[A.Length];
 
-            int evenCount = 0;
-            int oddCount = 0;
-
-            foreach (var n in numbers)
+            for (int i = 0; i < A.Length; i++)
             {
-                if (n % 2 == 0)
-                    evenCount++;
-                else
-                    oddCount++;
+                B[i] = A[i] * 2;
             }
 
-            Console.WriteLine($"liczba parzystych: {evenCount}");
-            Console.WriteLine($"liczba nieparzystych: {oddCount}");
+            Console.WriteLine("tablica A: { " + string.Join(", ", A) + " }");
+            Console.WriteLine("tablica B po operacji: { " + string.Join(", ", B) + " }");
         }
     }
 }
