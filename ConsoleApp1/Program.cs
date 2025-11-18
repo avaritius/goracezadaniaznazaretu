@@ -6,19 +6,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int[] arr = { 5, 10, 15, 20, 25 };
+            string[] names = { "Anna", "Bartek", "Celina", "Dawid", "Ewa" };
 
-            int min = arr[0];
-            int max = arr[0];
-
-            for (int i = 1; i < arr.Length; i++)
+            for (int i = names.Length - 1; i >= 0; i--)
             {
-                if (arr[i] < min) min = arr[i];
-                if (arr[i] > max) max = arr[i];
+                Console.WriteLine(names[i]);
             }
-
-            Console.WriteLine($"najmniejszy element: {min}");
-            Console.WriteLine($"najwiekszy element: {max}"); 
         }
     }
 }
