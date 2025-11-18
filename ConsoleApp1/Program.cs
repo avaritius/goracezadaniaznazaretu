@@ -18,7 +18,7 @@ namespace ConsoleApp1
             }
 
             Console.WriteLine($"najmniejszy element: {min}");
-            Console.WriteLine($"najwiekszy element: {max}");
+            Console.WriteLine($"najwiekszy element: {max}"); 
         }
     }
 }
