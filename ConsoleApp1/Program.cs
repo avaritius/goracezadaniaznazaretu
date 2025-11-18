@@ -1,16 +1,24 @@
-﻿namespace ConsoleApp1
+﻿using System;
+
+namespace ConsoleApp1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             int[] arr = { 5, 10, 15, 20, 25 };
-            int sum = 0;
-            for (int i = 0; i < arr.Length; i++)
+
+            int min = arr[0];
+            int max = arr[0];
+
+            for (int i = 1; i < arr.Length; i++)
             {
-                sum += arr[i];
+                if (arr[i] < min) min = arr[i];
+                if (arr[i] > max) max = arr[i];
             }
-            Console.WriteLine($" suma tonazu mamy nerda:{sum}");
+
+            Console.WriteLine($"najmniejszy element: {min}");
+            Console.WriteLine($"najwiekszy element: {max}");
         }
     }
 }
