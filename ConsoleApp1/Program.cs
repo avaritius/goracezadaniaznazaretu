@@ -6,20 +6,24 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int[,] macierz = new int[3, 3]
-            {
-                { 1, 2, 3 },
-                { 4, 5, 6 },
-                { 7, 8, 9 }
-            };
+            int[] tablica = { 5, 1, 4, 2, 8 };
 
-            int suma = 0;
-            for (int i = 0; i < 3; i++)
+            Console.WriteLine("tablica przed: { " + string.Join(", ", tablica) + " }");
+
+            for (int i = 0; i < tablica.Length - 1; i++)
             {
-                suma += macierz[i, i];
+                for (int j = 0; j < tablica.Length - 1 - i; j++)
+                {
+                    if (tablica[j] > tablica[j + 1])
+                    {
+                        int tymczasowa = tablica[j];
+                        tablica[j] = tablica[j + 1];
+                        tablica[j + 1] = tymczasowa;
+                    }
+                }
             }
 
-            Console.WriteLine($"suma elementow na glownej przekatnej: {suma}");
+            Console.WriteLine("tablica po: { " + string.Join(", ", tablica) + " }");
         }
     }
 }
