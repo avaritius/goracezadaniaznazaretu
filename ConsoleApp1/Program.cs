@@ -6,16 +6,32 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int[] A = { 1, 2, 3, 4, 5 };
-            int[] B = new int[A.Length];
+            int[] tablica = { 1, 2, 3, 4, 5, 10, 15, 20 };
 
-            for (int i = 0; i < A.Length; i++)
+            Console.Write("podaj liczbe, ktora chcesz znalezc w tablicy: ");
+            int szukanaLiczba = int.Parse(Console.ReadLine());
+
+            bool czyZnaleziono = false;
+            int indeks = -1;
+
+            for (int i = 0; i < tablica.Length; i++)
             {
-                B[i] = A[i] * 2;
+                if (tablica[i] == szukanaLiczba)
+                {
+                    czyZnaleziono = true;
+                    indeks = i;
+                    break; 
+                }
             }
 
-            Console.WriteLine("tablica A: { " + string.Join(", ", A) + " }");
-            Console.WriteLine("tablica B po operacji: { " + string.Join(", ", B) + " }");
+            if (czyZnaleziono)
+            {
+                Console.WriteLine($"liczba {szukanaLiczba} znajduje sie w tablicy na indeksie {indeks}");
+            }
+            else
+            {
+                Console.WriteLine($"liczba {szukanaLiczba} nie zostala znaleziona w tablicy");
+            }
         }
     }
 }
